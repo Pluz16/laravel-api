@@ -24,8 +24,8 @@ class ProjectsTableSeeder extends Seeder
             $description = $faker->paragraph(3);
             $url = $faker->url;
             $slug = Str::slug($name);
-            $type_id = rand(1, 10);
-            $user_id = rand(1, 50);
+            $type_id = rand(1, 3);
+            $user_id = 1;
     
             Project::create([
                 'name' => $name,
