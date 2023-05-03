@@ -9,9 +9,14 @@ use Illuminate\Http\Response;
 
 class ProjectController extends Controller
 {
-    public function index(Request $request)
-    {
-        $projects = Project::all();
-        return response()->json($projects, Response::HTTP_OK);
-    }
+    public function index()
+{
+    $projects = Project::with('type')->get();
+
+    return response()->json([
+        'success' => true,
+        'data' => $projects
+    ]);
+}
+
 }
